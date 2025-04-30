@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -100,6 +101,11 @@ public class GameManager : MonoBehaviour
 
                 finalScoreText.text = currentScore.ToString();
             }
+        }
+
+        if(resultsScreen.activeInHierarchy && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadSceneAsync(0);
         }
     }
 
